@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using CocoFarm.DataAccess;
 
 namespace CocoFarm.Models
 {
-    public class Produs
+    public class Produs : IEntityWithId
     {
         public int Id { get; set; }
         public string Denumire { get; set; }

@@ -1,4 +1,5 @@
-﻿using CocoFarm.Models;
+﻿using CocoFarm.DataAccess;
+using CocoFarm.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +10,17 @@ namespace CocoFarm.Controllers
 {
     public class CatalogProduseController : Controller
     {
+        private IDataStore<Produs> store = new MemoryDataStore<Produs>();
+
         public ActionResult Index()
         {
-            IEnumerable<Produs> produse = new List<Produs>(){
-                new Produs() { Id = 1, Cod = "ASP_Byer_500", Denumire = "Aspirină Byer 500 mg" },
-                new Produs() { Id = 2, Cod = "ASP_Byer_1000", Denumire = "Aspirină Byer 1000 mg" },
-                new Produs() { Id = 3, Cod = "PAR_Sicomed_500", Denumire = "Paracetamol 500 mg" }
-            };
+            IEnumerable<Produs> produse = store.GetAll();
             return View(produse);
         }
 
         public ActionResult Details(int id)
         {
-            Produs produs = new Produs();
+            var produs = store.GetById(id);
             return View(produs);
         }
 
@@ -35,8 +34,7 @@ namespace CocoFarm.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
+                store.Create(produs);
                 return RedirectToAction("Index");
             }
             catch
@@ -47,7 +45,8 @@ namespace CocoFarm.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var produs = store.GetById(id);
+            return View(produs);
         }
 
         [HttpPost]
@@ -55,18 +54,18 @@ namespace CocoFarm.Controllers
         {
             try
             {
-                // TODO: Add update logic here
-
+                store.Update(produs);
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View(produs);
             }
         }
 
         public ActionResult Delete(int id)
         {
+            var produs = store.GetById(id);
             return View();
         }
 
@@ -75,8 +74,7 @@ namespace CocoFarm.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                store.Delete(produs.Id);
                 return RedirectToAction("Index");
             }
             catch
