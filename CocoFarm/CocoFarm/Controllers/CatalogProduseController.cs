@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CocoFarm.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,12 +11,18 @@ namespace CocoFarm.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            IEnumerable<Produs> produse = new List<Produs>(){
+                new Produs() { Id = 1, Cod = "ASP_Byer_500", Denumire = "Aspirină Byer 500 mg" },
+                new Produs() { Id = 2, Cod = "ASP_Byer_1000", Denumire = "Aspirină Byer 1000 mg" },
+                new Produs() { Id = 3, Cod = "PAR_Sicomed_500", Denumire = "Paracetamol 500 mg" }
+            };
+            return View(produse);
         }
 
         public ActionResult Details(int id)
         {
-            return View();
+            Produs produs = new Produs();
+            return View(produs);
         }
 
         public ActionResult Create()
@@ -24,7 +31,7 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Produs produs)
         {
             try
             {
@@ -44,7 +51,7 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Produs produs)
         {
             try
             {
@@ -64,7 +71,7 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Produs produs)
         {
             try
             {
