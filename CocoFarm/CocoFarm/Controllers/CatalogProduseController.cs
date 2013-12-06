@@ -10,7 +10,11 @@ namespace CocoFarm.Controllers
 {
     public class CatalogProduseController : Controller
     {
-        private IDataStore<Produs> store = new MemoryDataStore<Produs>();
+        private IDataStore<Produs> store;
+        public CatalogProduseController(IDataStore<Produs> store)
+        {
+            this.store = store;
+        }
 
         public ActionResult Index()
         {
