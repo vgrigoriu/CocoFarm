@@ -1,7 +1,7 @@
 ﻿namespace CocoFarm.Model
 {
-    public interface IEntityWithId
+    public interface IEntityWithId<T>
     {
-        int Id { get; set; }
+        T Id { get; set; }
     }
 }

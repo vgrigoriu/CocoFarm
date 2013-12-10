@@ -4,8 +4,8 @@ using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
-    public class MemoryDataStore<TEntity> : IDataStore<TEntity>
-        where TEntity : IEntityWithId
+    public class MemoryDataStore<TEntity> : IDataStore<TEntity, int>
+        where TEntity : IEntityWithId<int>
     {
         public TEntity GetById(int id)
         {

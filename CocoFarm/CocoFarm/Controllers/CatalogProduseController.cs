@@ -7,8 +7,8 @@ namespace CocoFarm.Controllers
 {
     public class CatalogProduseController : Controller
     {
-        private IDataStore<Produs> store;
-        public CatalogProduseController(IDataStore<Produs> store)
+        private IDataStore<Produs, int> store;
+        public CatalogProduseController(IDataStore<Produs, int> store)
         {
             this.store = store;
         }

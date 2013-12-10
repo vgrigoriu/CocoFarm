@@ -3,8 +3,8 @@ using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
-    public interface IDataStore<T>
-        where T : IEntityWithId
+    public interface IDataStore<T, TId>
+        where T : IEntityWithId<TId>
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
