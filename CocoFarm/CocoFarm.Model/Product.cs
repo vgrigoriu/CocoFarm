@@ -1,10 +1,13 @@
-﻿namespace CocoFarm.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CocoFarm.Model
 {
     public class Product : EntityWithGuidId
     {
-        public string Denumire { get; set; }
-        public string Cod { get; set; }
-        public string Descriere { get; set; }
+        public string Name { get; set; }
+        [Required]
+        public string Code { get; set; }
+        public string Description { get; set; }
 
         public decimal? Price { get; set; }
     }

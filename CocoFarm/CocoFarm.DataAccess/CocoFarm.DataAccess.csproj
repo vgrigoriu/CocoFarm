@@ -64,6 +64,14 @@
     <Compile Include="Migrations\201312102205074_RenameProdusToProduct.Designer.cs">
       <DependentUpon>201312102205074_RenameProdusToProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312102217354_RenameProductColumns.cs" />
+    <Compile Include="Migrations\201312102217354_RenameProductColumns.Designer.cs">
+      <DependentUpon>201312102217354_RenameProductColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312102226174_ProductCodeIsrequired.cs" />
+    <Compile Include="Migrations\201312102226174_ProductCodeIsrequired.Designer.cs">
+      <DependentUpon>201312102226174_ProductCodeIsrequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +94,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312102205074_RenameProdusToProduct.resx">
       <DependentUpon>201312102205074_RenameProdusToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312102217354_RenameProductColumns.resx">
+      <DependentUpon>201312102217354_RenameProductColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312102226174_ProductCodeIsrequired.resx">
+      <DependentUpon>201312102226174_ProductCodeIsrequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,18 +9,18 @@
     @Html.AntiForgeryToken()
     
     <fieldset>        
-        <legend>@Html.DisplayNameFor(model => model.Denumire)</legend>
+        <legend>@Html.DisplayNameFor(model => model.Name)</legend>
         <div>
-            @Html.LabelFor(model => model.Denumire)
-            @Html.EditorFor(model => model.Denumire)
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
         </div>
         <div>
-            @Html.LabelFor(model => model.Cod)
-            @Html.EditorFor(model => model.Cod)
+            @Html.LabelFor(model => model.Code)
+            @Html.EditorFor(model => model.Code)
         </div>
         <div>
-            @Html.LabelFor(model => model.Descriere)
-            @Html.EditorFor(model => model.Descriere)
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
         </div>
         <div>
             @Html.LabelFor(model => model.Price)
