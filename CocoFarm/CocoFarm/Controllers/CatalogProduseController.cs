@@ -1,4 +1,5 @@
-﻿using CocoFarm.DataAccess;
+﻿using System;
+using CocoFarm.DataAccess;
 using CocoFarm.Model;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -7,8 +8,8 @@ namespace CocoFarm.Controllers
 {
     public class CatalogProduseController : Controller
     {
-        private IDataStore<Produs, int> store;
-        public CatalogProduseController(IDataStore<Produs, int> store)
+        private readonly IDataStore<Produs, Guid> store;
+        public CatalogProduseController(IDataStore<Produs, Guid> store)
         {
             this.store = store;
         }
@@ -19,7 +20,7 @@ namespace CocoFarm.Controllers
             return View(produse);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(Guid id)
         {
             var produs = store.GetById(id);
             return View(produs);
@@ -44,7 +45,7 @@ namespace CocoFarm.Controllers
             }
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(Guid id)
         {
             var produs = store.GetById(id);
             return View(produs);
@@ -64,7 +65,7 @@ namespace CocoFarm.Controllers
             }
         }
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(Guid id)
         {
             var produs = store.GetById(id);
             return View();

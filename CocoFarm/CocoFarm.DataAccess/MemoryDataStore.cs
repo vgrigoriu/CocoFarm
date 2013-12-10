@@ -1,13 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
-    public class MemoryDataStore<TEntity> : IDataStore<TEntity, int>
-        where TEntity : IEntityWithId<int>
+    public class MemoryDataStore<TEntity> : IDataStore<TEntity, Guid>
+        where TEntity : IEntityWithId<Guid>
     {
-        public TEntity GetById(int id)
+        public TEntity GetById(Guid id)
         {
             return storage[id];
         }
@@ -19,10 +20,8 @@ namespace CocoFarm.DataAccess
 
         public TEntity Create(TEntity entity)
         {
-            int id = nextId++;
-
-            entity.Id = id;
-            storage.Add(id, entity);
+            entity.Id = Guid.NewGuid();
+            storage.Add(entity.Id, entity);
 
             return entity;
         }
@@ -33,13 +32,11 @@ namespace CocoFarm.DataAccess
             return entity;
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             storage.Remove(id);
         }
 
-        private static int nextId = 1;
-
-        private static readonly Dictionary<int, TEntity> storage = new Dictionary<int, TEntity>();
+        private static readonly Dictionary<Guid, TEntity> storage = new Dictionary<Guid, TEntity>();
     }
 }
