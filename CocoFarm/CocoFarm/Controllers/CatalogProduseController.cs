@@ -1,9 +1,6 @@
 ﻿using CocoFarm.DataAccess;
-using CocoFarm.Models;
-using System;
+using CocoFarm.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CocoFarm.Controllers

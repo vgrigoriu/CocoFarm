@@ -134,7 +134,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Produs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +237,10 @@
     <ProjectReference Include="..\CocoFarm.DataAccess\CocoFarm.DataAccess.csproj">
       <Project>{222e0e98-679b-4f62-bf51-e2f52604c2ed}</Project>
       <Name>CocoFarm.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CocoFarm.Model\CocoFarm.Model.csproj">
+      <Project>{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}</Project>
+      <Name>CocoFarm.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

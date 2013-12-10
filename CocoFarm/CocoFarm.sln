@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{216F9F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CocoFarm.Model", "CocoFarm.Model\CocoFarm.Model.csproj", "{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{222E0E98-679B-4F62-BF51-E2F52604C2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{222E0E98-679B-4F62-BF51-E2F52604C2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{222E0E98-679B-4F62-BF51-E2F52604C2ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B799ABC-4A42-4A43-AB9F-34DA5B5704CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

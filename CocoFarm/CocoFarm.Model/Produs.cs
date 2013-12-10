@@ -1,6 +1,4 @@
-﻿using CocoFarm.DataAccess;
-
-namespace CocoFarm.Models
+﻿namespace CocoFarm.Model
 {
     public class Produs : IEntityWithId
     {

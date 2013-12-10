@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
