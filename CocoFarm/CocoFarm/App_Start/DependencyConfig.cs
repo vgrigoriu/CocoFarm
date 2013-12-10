@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System.Data.Entity;
+using Autofac;
 using Autofac.Integration.Mvc;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,9 @@ namespace CocoFarm
 
         private static ContainerBuilder RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterGeneric(typeof(MemoryDataStore<>)).As(typeof(IDataStore<,>));
+            builder.RegisterType<CocoFarmContext>().As<DbContext>();
+
+            builder.RegisterGeneric(typeof(DbContextDataStore<>)).As(typeof(IDataStore<,>));
             return builder;
         }
 
