@@ -3,7 +3,7 @@ using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
-    public interface IDataStore<T, TId>
+    public interface IDataStore<T, in TId>
         where T : IEntityWithId<TId>
     {
         IEnumerable<T> GetAll();

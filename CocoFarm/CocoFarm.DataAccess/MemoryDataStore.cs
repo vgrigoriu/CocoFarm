@@ -1,7 +1,6 @@
-﻿using System;
+﻿using CocoFarm.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using CocoFarm.Model;
 
 namespace CocoFarm.DataAccess
 {
@@ -10,33 +9,33 @@ namespace CocoFarm.DataAccess
     {
         public TEntity GetById(Guid id)
         {
-            return storage[id];
+            return Storage[id];
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return storage.Select(keyValue => keyValue.Value);
+            return Storage.Values;
         }
 
         public TEntity Create(TEntity entity)
         {
             entity.Id = Guid.NewGuid();
-            storage.Add(entity.Id, entity);
+            Storage.Add(entity.Id, entity);
 
             return entity;
         }
 
         public TEntity Update(TEntity entity)
         {
-            storage[entity.Id] = entity;
+            Storage[entity.Id] = entity;
             return entity;
         }
 
         public void Delete(Guid id)
         {
-            storage.Remove(id);
+            Storage.Remove(id);
         }
 
-        private static readonly Dictionary<Guid, TEntity> storage = new Dictionary<Guid, TEntity>();
+        private static readonly Dictionary<Guid, TEntity> Storage = new Dictionary<Guid, TEntity>();
     }
 }
