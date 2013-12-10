@@ -8,16 +8,16 @@ namespace CocoFarm.Controllers
 {
     public class CatalogProduseController : Controller
     {
-        private readonly IDataStore<Produs, Guid> store;
+        private readonly IDataStore<Product, Guid> store;
 
-        public CatalogProduseController(IDataStore<Produs, Guid> store)
+        public CatalogProduseController(IDataStore<Product, Guid> store)
         {
             this.store = store;
         }
 
         public ActionResult Index()
         {
-            IEnumerable<Produs> produse = store.GetAll();
+            IEnumerable<Product> produse = store.GetAll();
             return View(produse);
         }
 
@@ -33,9 +33,9 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Produs produs)
+        public ActionResult Create(Product product)
         {
-            store.Create(produs);
+            store.Create(product);
             return RedirectToAction("Index");
         }
 
@@ -46,9 +46,9 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Produs produs)
+        public ActionResult Edit(Product product)
         {
-            store.Update(produs);
+            store.Update(product);
             return RedirectToAction("Index");
         }
 
@@ -59,10 +59,10 @@ namespace CocoFarm.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(Produs produs)
+        public ActionResult Delete(Product product)
         {
 
-            store.Delete(produs.Id);
+            store.Delete(product.Id);
             return RedirectToAction("Index");
         }
     }
