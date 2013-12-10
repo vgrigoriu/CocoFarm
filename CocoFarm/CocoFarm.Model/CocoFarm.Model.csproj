@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="EntityWithGuidId.cs" />
     <Compile Include="IEntityWithId.cs" />
-    <Compile Include="Produs.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
