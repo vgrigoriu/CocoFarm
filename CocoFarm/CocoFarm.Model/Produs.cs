@@ -1,6 +1,6 @@
 ﻿namespace CocoFarm.Model
 {
-    public class Produs : EntityWithGuidId
+    public class Product : EntityWithGuidId
     {
         public string Denumire { get; set; }
         public string Cod { get; set; }
