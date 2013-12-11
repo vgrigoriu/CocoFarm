@@ -5,6 +5,7 @@ namespace CocoFarm.DataAccess
 {
     public class CocoFarmContext : DbContext
     {
-        DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductCategory> Categories { get; set; }
     }
 }

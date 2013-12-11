@@ -1,3 +1,5 @@
+using CocoFarm.Model;
+
 namespace CocoFarm.DataAccess.Migrations
 {
     using System;
@@ -13,8 +15,12 @@ namespace CocoFarm.DataAccess.Migrations
             ContextKey = "CocoFarm.DataAccess.CocoFarmContext";
         }
 
-        protected override void Seed(CocoFarm.DataAccess.CocoFarmContext context)
+        protected override void Seed(CocoFarmContext context)
         {
+            context.Categories.AddOrUpdate(p => p.Name,
+                new ProductCategory() { Id = Guid.NewGuid(), Name = "Antibiotics" },
+                new ProductCategory() { Id = Guid.NewGuid(), Name = "First Aid" });
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

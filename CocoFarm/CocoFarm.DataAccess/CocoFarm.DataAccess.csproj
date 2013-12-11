@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201312111443294_DescriptionRequired.Designer.cs">
       <DependentUpon>201312111443294_DescriptionRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312111456459_CreateCategory.cs" />
+    <Compile Include="Migrations\201312111456459_CreateCategory.Designer.cs">
+      <DependentUpon>201312111456459_CreateCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312111443294_DescriptionRequired.resx">
       <DependentUpon>201312111443294_DescriptionRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312111456459_CreateCategory.resx">
+      <DependentUpon>201312111456459_CreateCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
