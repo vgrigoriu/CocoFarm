@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Create";
 }
+@using CocoFarm.Model
 @model CocoFarm.Model.Product
 <h2>Adaugare produs</h2>
 
@@ -9,6 +10,9 @@
     @Html.AntiForgeryToken()
     <fieldset>
         <legend>Produs nou</legend>
+        <div>
+            @Html.ValidationSummary()
+        </div>
         <div>
             @Html.LabelFor(model => model.Denumire)
             @Html.EditorFor(model => model.Denumire)
@@ -25,6 +29,14 @@
         <div>
             @Html.LabelFor(model => model.Price)
             @Html.EditorFor(model => model.Price)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Category)
+            @{
+                var categories = from cat in (IEnumerable<ProductCategory>)ViewBag.Categories
+                                 select new SelectListItem {Text = cat.Name, Value = cat.Id.ToString()};
+            }
+            @Html.DropDownList("CategoryId", categories)
         </div>
     </fieldset>
     <p>

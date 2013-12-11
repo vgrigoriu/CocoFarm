@@ -27,7 +27,7 @@ namespace CocoFarm
 
         private static ContainerBuilder RegisterServices(ContainerBuilder builder)
         {
-            builder.RegisterType<CocoFarmContext>().As<DbContext>();
+            builder.RegisterType<CocoFarmContext>().As<DbContext>().InstancePerLifetimeScope();
 
             builder.RegisterGeneric(typeof(DbContextDataStore<>)).As(typeof(IDataStore<,>));
             return builder;

@@ -12,10 +12,14 @@ namespace CocoFarm.Controllers
     public class CatalogProduseController : Controller
     {
         private readonly IDataStore<Product, Guid> store;
+        private readonly IDataStore<ProductCategory, Guid> categoryStore;
 
-        public CatalogProduseController(IDataStore<Product, Guid> store)
+        public CatalogProduseController(
+            IDataStore<Product, Guid> store,
+            IDataStore<ProductCategory, Guid> categoryStore)
         {
             this.store = store;
+            this.categoryStore = categoryStore;
         }
 
         public ActionResult Index()
@@ -32,18 +36,25 @@ namespace CocoFarm.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.Categories = categoryStore.GetAll().ToList();
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create(Product produs)
+        public ActionResult Create(Product produs, Guid categoryId)
         {
+
+
             if (ModelState.IsValid)
             {
+                produs.Category = categoryStore.GetById(categoryId);
+
                 store.Create(produs);
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Categories = categoryStore.GetAll().ToList();
             return View(produs);
         }
 
