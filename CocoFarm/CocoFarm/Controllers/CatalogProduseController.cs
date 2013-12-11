@@ -35,8 +35,13 @@ namespace CocoFarm.Controllers
         [HttpPost]
         public ActionResult Create(Product produs)
         {
-            store.Create(produs);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                store.Create(produs);
+                return RedirectToAction("Index");
+            }
+
+            return View(produs);
         }
 
         public ActionResult Edit(Guid id)

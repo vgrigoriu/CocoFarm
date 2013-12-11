@@ -16,6 +16,7 @@
         <div>
             @Html.LabelFor(model => model.Cod)
             @Html.EditorFor(model => model.Cod)
+            @Html.ValidationMessageFor(model => model.Cod)
         </div>
         <div>
             @Html.LabelFor(model => model.Descriere)

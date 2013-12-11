@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201312111423018_RenameProduct.Designer.cs">
       <DependentUpon>201312111423018_RenameProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312111443294_DescriptionRequired.cs" />
+    <Compile Include="Migrations\201312111443294_DescriptionRequired.Designer.cs">
+      <DependentUpon>201312111443294_DescriptionRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312111423018_RenameProduct.resx">
       <DependentUpon>201312111423018_RenameProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312111443294_DescriptionRequired.resx">
+      <DependentUpon>201312111443294_DescriptionRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
