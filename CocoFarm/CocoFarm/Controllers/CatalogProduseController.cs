@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Linq;
+
 using CocoFarm.DataAccess;
 using CocoFarm.Model;
 using System.Collections.Generic;
@@ -17,8 +20,8 @@ namespace CocoFarm.Controllers
 
         public ActionResult Index()
         {
-            IEnumerable<Product> produse = store.GetAll();
-            return View(produse);
+            var produse = ((DbSet<Product>)store.GetAll()).Include(p => p.Category);
+            return View(produse.ToList());
         }
 
         public ActionResult Details(Guid id)

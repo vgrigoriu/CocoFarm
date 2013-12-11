@@ -11,5 +11,7 @@ namespace CocoFarm.Model
         public string Descriere { get; set; }
 
         public decimal? Price { get; set; }
+
+        public ProductCategory Category { get; set; }
     }
 }

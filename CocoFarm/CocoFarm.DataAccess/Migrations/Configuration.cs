@@ -21,6 +21,16 @@ namespace CocoFarm.DataAccess.Migrations
                 new ProductCategory() { Id = Guid.NewGuid(), Name = "Antibiotics" },
                 new ProductCategory() { Id = Guid.NewGuid(), Name = "First Aid" });
 
+            context.SaveChanges();
+
+            var aCategory = context.Categories.FirstOrDefault();
+
+            foreach (var product in context.Products)
+            {
+                if (product.Category == null)
+                    product.Category = aCategory;
+            }
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
